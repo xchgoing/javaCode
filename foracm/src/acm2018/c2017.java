@@ -1,0 +1,85 @@
+package acm2018;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.io.PrintWriter;
+import java.io.StreamTokenizer;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+public class c2017
+{
+	public static void main(String[] args) throws IOException
+	{
+		StreamTokenizer in = new StreamTokenizer(new BufferedReader(new InputStreamReader(System.in)));
+		PrintWriter out = new PrintWriter(new OutputStreamWriter(System.out));
+		while(in.nextToken()!=StreamTokenizer.TT_EOF)
+		{
+			int n=(int) in.nval;in.nextToken();
+			for(int p=0;p<n;p++)
+			{
+				Map<String,int[]>map=new HashMap();
+				int peoplef=(int) in.nval;in.nextToken();
+				int problem=(int) in.nval;in.nextToken();
+				int peoplen=(int) in.nval;in.nextToken();
+				for(int o=0;o<peoplen;o++)
+				{
+					int[] arr=new int[problem];
+					Arrays.fill(arr,0);
+					map.put(in.sval,arr);in.nextToken();
+				}
+				for(int o=0;o<problem;o++)
+				{
+					int i=(int) in.nval;in.nextToken();
+					for(int l=0;l<i;l++)
+					{
+						String name=in.sval;in.nextToken();
+						int[] temp=Arrays.copyOf(map.get(name),problem);
+						temp[o]=1;
+						map.put(name,temp);
+					}
+				}
+				List<String> re=new ArrayList<String>(); 
+				Map<String,String>list=new HashMap();
+				Iterator<String> iter=map.keySet().iterator();
+				while(iter.hasNext())
+				{
+					String temp=iter.next();
+					String ArrStr=Arrays.toString(map.get(temp));
+					if(list.containsKey(ArrStr))
+					{
+						re.add(ArrStr);
+					}else
+					{
+						list.put(ArrStr,temp);
+					}
+				}
+				for(int o=0;o<re.size();o++)
+				{
+					list.remove(re.get(o));
+				}
+				for(int o=0;o<peoplef;o++)
+				{
+					int[] arr=new int[problem];
+					for(int l=0;l<arr.length;l++)
+					{
+						arr[l]=(int) in.nval;in.nextToken();
+					}
+					String find=Arrays.toString(arr);
+					if(list.containsKey(find))
+					{
+						System.out.println(list.get(find));
+					}else
+					{
+						System.out.println("Let's go to the library!!");
+					}
+				}
+			}
+		}
+		out.flush();
+	}
+}

@@ -1,0 +1,42 @@
+import java.util.Scanner;
+
+
+public class hdu2028
+{
+
+	public static void main(String[] args)
+	{
+		Scanner s=new Scanner(System.in);
+		while(s.hasNextInt())
+		{
+			int a=s.nextInt();
+			int arr[];
+			arr=new int[a];
+			int sum=0;
+			int ji=1;
+			for(int b=0;b<a;b++)
+			{
+				arr[b]=s.nextInt();
+				ji=ji*arr[b];
+				if(arr[b]>sum)sum=arr[b];
+			}
+			int count=0;
+			for(int zx=sum;zx<=ji;zx++)
+			{
+				for(int b=0;b<a;b++)
+				{
+					System.out.println(arr[b]);
+					if(zx%arr[b]==0)count++;
+				}
+				if(count==a)
+				{
+					System.out.println(zx);
+					break;
+				}
+			}
+			
+		}
+
+	}
+
+}

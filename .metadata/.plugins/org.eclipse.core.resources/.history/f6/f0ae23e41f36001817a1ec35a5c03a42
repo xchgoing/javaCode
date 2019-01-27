@@ -1,0 +1,36 @@
+package acm2018;
+
+import java.util.Scanner;
+
+public class test{
+
+     public static void main(String []args)
+     {
+    	 Scanner s=new Scanner (System.in);
+    	 while(s.hasNext())
+    	 {
+    		 String q=s.next();
+    		 for(int a=0;a<q.length();a++)
+    		 {
+    			 for(int b=a+1;b<(q.length()-a)/2+1;b++)
+    			 {
+    				 if((int)q.charAt(a)==(int)q.charAt(b))
+        			 {
+    					 if(qwe(q.substring(a,2*(b-a))))
+    					 {
+    						 System.out.println(q.substring(a,b));
+    					 }
+        			 }
+    			 }
+    		 }
+    	 }
+     }
+     public static boolean qwe(String q)
+     {
+    	 if(!q.substring(0,q.length()/2).equals(q.substring(q.length()/2,q.length())))
+    	 {
+    		 return false;
+    	 }
+    	 return true;
+     }
+}

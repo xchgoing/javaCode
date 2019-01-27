@@ -1,0 +1,25 @@
+package zuoye;
+
+import java.math.BigInteger;
+import java.util.Scanner;
+
+public class sy
+{
+
+	public static void main(String[] args) 
+	{
+		Scanner s=new Scanner(System.in);
+		while(s.hasNextBigInteger())
+		{
+			BigInteger q=s.nextBigInteger();
+			BigInteger w=q.add(new BigInteger("1")).multiply(q).divide(new BigInteger("2")).pow(2).mod(new BigInteger("10000"));
+			int e=w.toString().length();
+			for(int a=0;a<4-e;a++)
+			{
+				System.out.print("0");
+			}
+			System.out.println(w);
+		}
+	}
+
+}

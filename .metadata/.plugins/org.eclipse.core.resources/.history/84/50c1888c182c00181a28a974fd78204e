@@ -1,0 +1,71 @@
+package zuoye;
+
+import java.awt.List;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.io.PrintWriter;
+import java.io.StreamTokenizer;
+import java.math.BigInteger;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.Scanner;
+import java.util.Set;
+
+public class sy
+{
+
+	public static void main(String[] args) 
+	{
+		StreamTokenizer in = new StreamTokenizer(new BufferedReader(new InputStreamReader(System.in)));
+		PrintWriter out = new PrintWriter(new OutputStreamWriter(System.out));
+		while(in.nextToken()!=StreamTokenizer.TT_EOF)
+		{
+			int n=(int) in.nval;
+			in.nextToken();
+			int m=(int) in.nval;
+			in.nextToken();
+			Set<Integer> set = new HashSet();
+			ArrayList list=new ArrayList();
+			for(int a=0;a<n;a++)
+			{
+				int temp=(int) in.nval;
+				in.nextToken();
+				set.add(temp);
+			}
+			int q=set.size();
+			for(int a=0;a<m;a++)
+			{
+				int temp=(int) in.nval;
+				in.nextToken();
+				set.add(temp);
+				if(set.size()==q)
+				{
+					list.add(temp);
+				}else
+				{
+					q++;
+				}
+			}
+			if(list.size()==0)
+			{
+				System.out.println("empty");
+			}else
+			{
+				Collections.sort(list);
+				for(int a=0;a<list.size();a++)
+				{
+					if(a!=list.size()-1)
+					{
+						System.out.print(list.get(a)+" ");
+					}else
+					{
+						System.out.print(list.get(a));
+					}
+				}
+			}
+		}
+	}
+	out.flush();
+}

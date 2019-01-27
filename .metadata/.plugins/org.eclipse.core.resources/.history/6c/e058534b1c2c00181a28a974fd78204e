@@ -1,0 +1,53 @@
+package zuoye;
+
+import java.awt.List;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.io.PrintWriter;
+import java.io.StreamTokenizer;
+import java.math.BigInteger;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.Scanner;
+import java.util.Set;
+
+public class sy
+{
+
+	public static void main(String[] args) throws IOException 
+	{
+		StreamTokenizer in = new StreamTokenizer(new BufferedReader(new InputStreamReader(System.in)));
+		PrintWriter out = new PrintWriter(new OutputStreamWriter(System.out));
+		while(in.nextToken()!=StreamTokenizer.TT_EOF)
+		{
+			int n=(int) in.nval;
+			in.nextToken();
+			int m=(int) in.nval;
+			in.nextToken();
+			Set<Integer> set = new HashSet();
+			for(int a=0;a<n;a++)
+			{
+				int temp=(int) in.nval;
+				in.nextToken();
+				set.add(temp);
+			}
+			int q=set.size();
+			int count=0;
+			for(int a=0;a<m;a++)
+			{
+				int temp=(int) in.nval;
+				in.nextToken();
+				set.add(temp);
+				if(q==set.size())
+				{
+					count++;
+					System.out.println(temp);
+				}
+			}
+			if(count==0)System.out.println("enpty");
+		}out.flush();
+	}
+}

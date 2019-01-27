@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;qimofuxi.lps&apos; to &apos;yhsj&apos;&#x0D;&#x0A;- Original project: &apos;text&apos;&#x0D;&#x0A;- Original element: &apos;qimofuxi.lps&apos;&#x0D;&#x0A;- Renamed element: &apos;qimofuxi.yhsj&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;lps&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;qimofuxi{lps.java[lps" matchStrategy="1" name="yhsj" qualified="false" references="true" similarDeclarations="false" stamp="1516245133763" textual="false" version="1.0"/>
+</session>

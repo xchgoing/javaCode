@@ -1,0 +1,78 @@
+package acm2018;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+import java.util.Scanner;
+public class test
+{
+	public static void main(String[] args)
+	{
+		Scanner s=new Scanner (System.in);
+		while(s.hasNextInt())
+		{
+			int n=s.nextInt();
+			for(int p=0;p<n;p++)
+			{
+				Map<String,int[]>map=new HashMap();
+				int peoplef=s.nextInt();
+				int problem=s.nextInt();
+				int peoplen=s.nextInt();
+				for(int o=0;o<peoplen;o++)
+				{
+					map.put(s.next(),new int[problem]);
+				}
+				for(int o=0;o<problem;o++)
+				{
+					int i=s.nextInt();
+					for(int l=0;l<i;l++)
+					{
+						String name=s.next();
+						int[] temp=Arrays.copyOf(map.get(name),problem);
+						temp[o]=1;
+						map.put(name,temp);
+					}
+				}
+				List<String> re=new ArrayList<String>(); 
+				Map<String,String>list=new HashMap();
+				Iterator<String> iter=map.keySet().iterator();
+				while(iter.hasNext())
+				{
+					String temp=iter.next();
+					String ArrStr=Arrays.toString(map.get(temp));
+					if(list.containsKey(ArrStr))
+					{
+						re.add(ArrStr);
+					}else
+					{
+						list.put(ArrStr,temp);
+					}
+				}
+				for(int o=0;o<re.size();o++)
+				{
+					list.remove(re.get(o));
+				}
+				for(int o=0;o<peoplef;o++)
+				{
+					int[] arr=new int[problem];
+					for(int l=0;l<arr.length;l++)
+					{
+						arr[l]=s.nextInt();
+					}
+					String find=Arrays.toString(arr);
+					if(list.containsKey(find))
+					{
+						System.out.println(list.get(find));
+					}else
+					{
+						System.out.println("Let's go to the library!!");
+					}
+				}
+			}
+		}
+	}
+
+}

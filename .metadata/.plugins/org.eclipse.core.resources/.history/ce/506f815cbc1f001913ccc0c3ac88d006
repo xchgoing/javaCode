@@ -1,0 +1,25 @@
+package µÚ¶þ³¡;
+
+import java.math.BigInteger;
+import java.util.Scanner;
+
+public class H
+{
+
+	public static void main(String[] args)
+	{
+		Scanner s=new Scanner(System.in);
+		while(s.hasNextBigInteger())
+		{
+			BigInteger in=s.nextBigInteger().add(BigInteger.ONE);
+			String qwe=in.toString(3);
+			int out=qwe.length();
+			for(int a=0;a<qwe.length();a++)
+			{
+				
+			}
+		}
+
+	}
+
+}

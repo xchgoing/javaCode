@@ -1,0 +1,39 @@
+import java.util.Scanner;
+
+
+public class hdu2022
+{
+
+	public static void main(String[] args)
+	{
+		Scanner s=new Scanner(System.in);
+		System.out.println("ok");
+		//while(true);
+		//{
+			int m=s.nextInt();
+			int n=s.nextInt();
+			int arr[][];
+			arr=new int[m][n];
+			int h=0,l=0;
+			for(int a=0;a<m;a++)
+			{
+				int max=0;
+				for(int b=0;b<n;b++)
+				{
+					arr[a][b]=s.nextInt();
+					System.out.print(arr[a][b]+" ");
+					if(Math.abs(arr[a][b])>max)
+					{
+						max=Math.abs(arr[a][b]);
+						h=a;
+						l=b;
+					}
+				}
+			}
+			System.out.println(h+" "+l+" "+arr[h][l]);
+			
+		//}
+
+	}
+
+}

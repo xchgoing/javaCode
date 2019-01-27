@@ -1,0 +1,80 @@
+package µÚÒ»³¡0122;
+
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.io.PrintWriter;
+import java.io.StreamTokenizer;
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Scanner;
+
+public class J
+{
+
+	public static void main(String[] args) throws IOException
+	{
+		StreamTokenizer in = new StreamTokenizer(new BufferedReader(new InputStreamReader(System.in)));
+		PrintWriter out = new PrintWriter(new OutputStreamWriter(System.out));
+		in.nextToken();
+//		Scanner s=new Scanner (System.in);
+		int n=(int) in.nval;
+		in.nextToken();
+		int m=(int) in.nval;
+		in.nextToken();
+		System.out.println(n+" "+m);
+		HashSet<Integer>[] sets=new HashSet[n+1]; 
+		int[] arr=new int[n+1];
+		Arrays.fill(arr,0);
+//		for(int a=1;a<sets.length;a++)
+//		{
+//			sets[a]=new HashSet<Integer>();
+//		}
+		while(m-->0)
+		{
+			int opt=(int) in.nval;
+			in.nextToken();
+			int l=(int) in.nval;
+			in.nextToken();
+			int r=(int) in.nval;
+			in.nextToken();
+			int x=(int) in.nval;
+			in.nextToken();
+			System.out.println(opt+" "+l+" "+r+" "+x);
+			if(opt==1)
+			{
+				for(int a=l;a<=r;a++)
+				{
+					if(sets[a]==null)sets[a]=new HashSet<Integer>();
+					if(sets[a].add(x))
+					arr[a]^=x;
+				}
+			}else if(opt==2){
+				for(int a=l;a<=r;a++)
+				{
+					if(sets[a]!=null&&sets[a].remove(x))
+					arr[a]^=x;
+				}
+			}else
+			{
+				int result=0;
+				for(int a=l;a<=r;a++)
+				{
+					result^=arr[a];
+				}
+				System.out.println(result);
+			}
+			
+			for(int a=1;a<n+1;a++)
+			{
+//				System.out.print(a);
+//				System.out.print(sets[a].toString());
+			}
+//			System.out.println(sets[1]==sets[2]);
+//			System.out.println();
+			
+		}
+	}
+}

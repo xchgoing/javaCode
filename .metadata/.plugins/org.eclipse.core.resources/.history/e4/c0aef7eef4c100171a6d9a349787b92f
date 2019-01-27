@@ -1,0 +1,83 @@
+import java.util.Scanner;
+
+
+public class hdu2023
+{
+
+	public static void main(String[] args)
+	{
+		Scanner s=new Scanner(System.in);
+		while(s.hasNextInt())
+		{
+			int n=s.nextInt();
+			int m=s.nextInt();
+			if(n>50||m>5)break;
+			int arr[][];
+			arr=new int[n][m];
+			for(int a=0;a<n;a++)
+			{
+				for(int b=0;b<m;b++)
+				{
+					arr[a][b]=s.nextInt();
+				}
+			}
+			for(int a=0;a<n;a++)
+			{
+				double sum=0;
+				for(int b=0;b<m;b++)
+				{
+					sum=sum+arr[a][b];
+					
+				}
+				if(a<n-1)
+				{
+				System.out.print(String.format("%.2f",sum/m)+" ");
+				}else
+				{
+				System.out.println(String.format("%.2f",sum/m));
+				}
+			}
+			double pj[];
+			pj=new double[m];
+			for(int a=0;a<m;a++)
+			{
+				double sum=0;
+				int b;
+				for(b=0;b<n;b++)
+				{
+					sum=sum+arr[b][a];
+					
+				}
+				pj[a]=sum/n;
+				if(a<m-1)
+				{
+				System.out.print(String.format("%.2f",sum/n)+" ");
+				}else
+				{
+				System.out.println(String.format("%.2f",sum/n));
+				}
+			}
+			int rs=0;
+			for(int a=0;a<n;a++)
+			{
+				int count=0;
+				for(int b=0;b<m;b++)
+				{
+					if(arr[a][b]>=pj[b])
+					{
+						count++;
+					}
+				}
+				if(count==m)
+				{
+					rs++;
+				}
+			}
+			System.out.println(rs);
+		}
+		
+
+	}
+
+}
+

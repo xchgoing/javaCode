@@ -1,0 +1,42 @@
+package µÚÈý³¡;
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class A
+{
+
+	public static void main(String[] args)
+	{
+		Scanner s=new Scanner (System.in);
+		int n=s.nextInt();
+		int pl=0;
+		p[] ps=new p[n];
+		for(int a=0;a<n;a++)
+		{
+			ps[a]=new p(s.nextInt(),s.nextInt());
+			pl+=ps[a].tire;
+		}
+		for(int a=0;a<n;a++)
+		{
+			ps[a].need=(pl-ps[a].tire)*ps[a].time;
+		}
+		Arrays.sort(ps,(a,b)->a.need-b.need);
+		for(int a=0;a<n;a++)
+		{
+			System.out.println(ps[a].need);
+		}
+	}
+
+}
+class p
+{
+	int time;
+	int tire;
+	int need;
+	p(int q,int b)
+	{
+		time=q;
+		tire=b;
+	}
+}

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;acm2018.b2011&apos; to &apos;c2012&apos;&#x0D;&#x0A;- Original project: &apos;foracm&apos;&#x0D;&#x0A;- Original element: &apos;acm2018.b2011&apos;&#x0D;&#x0A;- Renamed element: &apos;acm2018.c2012&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;b2011&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;acm2018{b2011.java[b2011" matchStrategy="1" name="c2012" qualified="false" references="true" similarDeclarations="false" stamp="1522025916757" textual="false" version="1.0"/>
+</session>

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;hanjijichuti.hdu1017&apos; to &apos;hdu1017wa&apos;&#x0D;&#x0A;- Original project: &apos;123&apos;&#x0D;&#x0A;- Original element: &apos;hanjijichuti.hdu1017&apos;&#x0D;&#x0A;- Renamed element: &apos;hanjijichuti.hdu1017wa&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;hdu1017&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;hanjijichuti{hdu1017.java[hdu1017" matchStrategy="1" name="hdu1017wa" qualified="false" references="true" similarDeclarations="false" stamp="1517290228398" textual="false" version="1.0"/>
+</session>

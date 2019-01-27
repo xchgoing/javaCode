@@ -1,0 +1,20 @@
+import java.util.Scanner;
+
+
+public class hdu2025
+{
+
+	public static void main(String[] args)
+	{
+		Scanner s=new Scanner(System.in);
+		while(s.hasNextLine())
+		{
+			String q=s.next();
+			char a=q.charAt(0);
+			int x=(int)a;
+			System.out.println(x);
+		}
+
+	}
+
+}

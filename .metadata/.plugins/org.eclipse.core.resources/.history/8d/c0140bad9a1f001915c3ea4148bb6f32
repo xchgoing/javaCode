@@ -1,0 +1,49 @@
+package µÚ¶þ³¡;
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class J
+{
+
+	public static void main(String[] args)
+	{
+		boolean o=true;
+		Scanner s=new Scanner (System.in);
+		int n=s.nextInt();
+		c[] arr=new c[n];
+		for(int a=0;a<n;a++)
+		{
+			arr[a]=new c(s.nextInt());
+		}
+		for(int a=0;a<n;a++)
+		{
+			arr[a].nt=s.nextInt();
+		}
+		Arrays.sort(arr,(c c1,c c2)->(c2.start-c1.start));
+		System.out.println(arr[0].nt);
+		int time=0;
+		for(int a=0;a<n;a++)
+		{
+			int temp=arr[a].start-a*2;
+			if(temp-time<arr[a].nt)
+			{
+				System.out.println("---"+a);
+				o=false;
+				break;
+			}
+			time+=arr[a].nt;
+		}
+		System.out.println(o==true?"YES":"NO");
+	}
+}
+
+class c
+{
+	c(int starti)
+	{
+		start=starti;
+	}
+	int start;
+	int nt;
+}

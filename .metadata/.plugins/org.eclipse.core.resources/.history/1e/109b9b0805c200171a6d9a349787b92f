@@ -1,0 +1,29 @@
+
+public class sy
+{
+
+	public static void main(String[] args)
+	{
+		int a=0;
+		while(a<6)
+		{
+			int b=5;
+			while(b>a)
+			{
+				System.out.print(" ");
+				b--;
+			}
+			System.out.print("*");
+			int c=0;
+			while(c<a*2)
+			{
+				System.out.print("*");
+				c++;
+			}
+			System.out.println();
+			a++;
+		}
+
+	}
+
+}

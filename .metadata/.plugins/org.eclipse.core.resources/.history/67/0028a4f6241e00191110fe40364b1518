@@ -1,0 +1,63 @@
+package µÚÒ»³¡0122;
+
+
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Scanner;
+
+public class J
+{
+
+	public static void main(String[] args)
+	{
+		Scanner s=new Scanner (System.in);
+		int n=s.nextInt();
+		int m=s.nextInt();
+		HashSet<Integer>[] sets=new HashSet[n+1]; 
+		int[] arr=new int[n+1];
+		Arrays.fill(arr,0);
+//		for(int a=1;a<sets.length;a++)
+//		{
+//			sets[a]=new HashSet<Integer>();
+//		}
+		while(m-->0)
+		{
+			int opt=s.nextInt();
+			int l=s.nextInt();
+			int r=s.nextInt();
+			int x=s.nextInt();
+			if(opt==1)
+			{
+				for(int a=l;a<=r;a++)
+				{
+					if(sets[a]==null)sets[a]=new HashSet<Integer>();
+					if(sets[a].add(x))
+					arr[a]^=x;
+				}
+			}else if(opt==2){
+				for(int a=l;a<=r;a++)
+				{
+					if(sets[a]!=null&&sets[a].remove(x))
+					arr[a]^=x;
+				}
+			}else
+			{
+				int result=0;
+				for(int a=l;a<=r;a++)
+				{
+					result^=arr[a];
+				}
+				System.out.println(result);
+			}
+			
+			for(int a=1;a<n+1;a++)
+			{
+//				System.out.print(a);
+//				System.out.print(sets[a].toString());
+			}
+//			System.out.println(sets[1]==sets[2]);
+//			System.out.println();
+			
+		}
+	}
+}

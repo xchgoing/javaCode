@@ -1,0 +1,19 @@
+package acm2018;
+
+import java.text.DateFormat;  
+import java.text.ParseException;  
+import java.text.SimpleDateFormat;  
+import java.util.Date;  
+import java.util.Scanner;
+  
+public class test {  
+    public static void main(String[] args) 
+    {  
+    	Scanner s=new Scanner (System.in);
+    	while(s.hasnext())
+    	{
+    		System.out.
+    	}
+    }  
+  
+} 

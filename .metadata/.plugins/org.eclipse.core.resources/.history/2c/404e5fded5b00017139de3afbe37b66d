@@ -1,0 +1,22 @@
+
+public class a {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int c=0;int m=0;int g=0;
+        while (g<=20)
+    {
+        while (m<=33)
+        {c++;
+        	if(g*5+m*3+(100-m-g)/3==100&&(100-m-g)%3==0)
+        	{System.out.println("gongji="+g+"muji="+m+"xiaoji="+(100-m-g));
+        }
+        	m++;
+        }
+m++;
+	}System.out.println(c);
+
+     }
+	}
+
+

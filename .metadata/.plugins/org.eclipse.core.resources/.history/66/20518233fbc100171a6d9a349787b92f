@@ -1,0 +1,26 @@
+import java.util.Scanner;
+
+
+public class hdu2026
+{
+
+	public static void main(String[] args)
+	{
+		Scanner s=new Scanner(System.in);
+		while(s.hasNextLine())
+		{
+			
+			String shuru=s.nextLine();
+			String[] arr=shuru.split(" ");
+			for(String a:arr)
+			{
+				System.out.println(a);
+			}
+					
+					
+					
+		}
+
+	}
+
+}

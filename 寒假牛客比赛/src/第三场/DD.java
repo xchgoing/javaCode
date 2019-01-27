@@ -1,0 +1,77 @@
+package µÚÈý³¡;
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class DD
+{
+
+	public static void main(String[] args)
+	{
+		Scanner s=new Scanner (System.in);
+		int n=s.nextInt();
+		long timeall=0;
+		pp[] ps=new pp[n];
+		long pl=0;
+		for(int a=0;a<n;a++)
+		{
+			ps[a]=new pp(s.nextInt(),s.nextInt());
+			timeall+=ps[a].time;
+			pl+=ps[a].tire;
+		}
+		for(int a=0;a<n;a++)
+		{
+			ps[a].delect=(timeall-ps[a].time)*ps[a].tire;
+			ps[a].need=(pl-ps[a].tire)*ps[a].time;
+		}
+		
+		Arrays.sort(ps,(a,b)->(a.need==b.need?b.delect-a.delect:a.need-b.need)<0?-1:1);
+		
+		long sum=0;
+		int i=0;
+		int o=0;
+		long min=Long.MAX_VALUE;
+		for(int a=0;a<n;a++)
+		{
+			sum+=ps[i].need;
+			o=i;
+			pl-=ps[a].tire;
+			o=i;
+			
+			for(int b=0;b<n;b++)
+			{
+				if(ps[b].need!=-1)
+				if(b==o)ps[b].need=-1;
+				else {
+					ps[b].delect=(timeall-ps[b].time)*ps[b].tire;
+					ps[b].need-=ps[o].tire*ps[b].time;
+					if(ps[b].need<min){
+						min=ps[b].need;
+						i=b;
+					}else if(ps[b].need==min)
+					{
+						if(ps[i].delect<ps[b].delect)
+						{
+							min=ps[b].tire;
+							i=b;
+						}
+					}
+				}
+			}
+		}
+		System.out.println(sum);
+	}
+
+}
+class pp
+{
+	long time;
+	long tire;
+	long delect;
+	long need;
+	pp(long q,long b)
+	{
+		time=q;
+		tire=b;
+	}
+}

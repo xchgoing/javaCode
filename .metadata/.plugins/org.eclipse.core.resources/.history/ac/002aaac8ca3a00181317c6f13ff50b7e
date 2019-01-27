@@ -1,0 +1,10 @@
+package acm2018;
+
+public class test
+{
+	public static void main(String[] args)
+	{
+		String q=Integer.toString(3,2);
+	}
+
+}

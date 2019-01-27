@@ -1,0 +1,23 @@
+import java.util.Scanner;
+
+
+public class hdu2024
+{
+
+	public static void main(String[] args)
+	{
+		Scanner s=new Scanner(System.in);
+		while(s.hasNextLine())
+		{
+			int a=s.nextInt();
+			//System.out.println("ok");
+			for(int b=0;b<a;b++)
+			{
+				tring
+			}
+			
+		}
+
+	}
+
+}

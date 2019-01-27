@@ -1,0 +1,59 @@
+package zuoye;
+
+import java.awt.List;
+import java.math.BigInteger;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.Scanner;
+import java.util.Set;
+
+public class sy
+{
+
+	public static void main(String[] args) 
+	{
+		Scanner s=new Scanner(System.in);
+		while(s.hasNextInt())
+		{
+			int n=s.nextInt();
+			int m=s.nextInt();
+			Set<Integer> set = new HashSet();
+			ArrayList list=new ArrayList();
+			for(int a=0;a<n;a++)
+			{
+				int temp=s.nextInt();
+				set.add(temp);
+			}
+			int q=set.size();
+			for(int a=0;a<m;a++)
+			{
+				int temp=s.nextInt();
+				set.add(temp);
+				if(set.size()==q)
+				{
+					list.add(temp);
+					q=set.size();
+				}
+			}
+			if(list.size()==0)
+			{
+				System.out.println("empty");
+			}else
+			{
+				Collections.sort(list);
+				for(int a=0;a<list.size();a++)
+				{
+					if(a!=list.size()-1)
+					{
+						System.out.print(list.get(a)+" ");
+					}else
+					{
+						System.out.print(list.get(a));
+					}
+				}
+			}
+		}
+	}
+
+}

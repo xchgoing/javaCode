@@ -1,0 +1,42 @@
+import java.util.Scanner;
+
+
+public class hdu2026
+{
+
+	public static void main(String[] args)
+	{
+		Scanner s=new Scanner(System.in);
+		while(s.hasNextLine())
+		{
+			
+			String shuru=s.nextLine();
+			String[] arr=shuru.split(" ");
+			//System.out.println(arr.length);
+			for(int a=0;a<arr.length;a++)
+			{
+				String l=arr[a].substring(0, 1);
+				char q=l.charAt(0);
+				System.out.println((int)q);
+				if((int)q>=97&&(int)q<=122)
+				{
+					System.out.println(arr[a].substring(0, 1)+" "+l.toUpperCase());
+					char ls=arr[a].charAt(0);
+					char lss=arr[a].toUpperCase().charAt(0);
+					arr[a].replace(ls,lss);
+					System.out.println(arr[a]);
+				}
+			}
+			/*for(String a:arr)
+			{
+				System.out.print(a+" ");
+			}
+			System.out.println();*/
+					
+					
+					
+		}
+
+	}
+
+}
